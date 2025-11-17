@@ -1,0 +1,113 @@
+Help me build a complete t-shirt e-commerce website using HTML, CSS, and JavaScript.
+
+Read these requirements carefully and follow them step-by-step:
+
+Project Title: ThreadCraft – Custom T-Shirt Store
+
+🧩 Core Features
+
+1. Product Catalog Display
+
+Display at least 6 t-shirt products in a responsive grid layout.
+
+Each product card should show:
+
+Product image
+
+Product name
+
+Price
+
+Description
+
+Size options (S, M, L, XL)
+
+Color options (e.g., Black, White, Blue, Red)
+
+Make sure users can click “Add to Cart” for any product.
+
+2. Shopping Cart System
+
+Add items to the cart with the selected size and color.
+
+Include a cart icon showing the number of items added.
+
+A Cart Page must:
+
+Display all items with images, details, and quantity controls (+/–).
+
+Calculate subtotal, 8.5% tax, and total price automatically.
+
+Allow removing items.
+
+Use localStorage to persist cart data even after page refresh.
+
+3. Checkout Process
+
+Create a Checkout Page with a form to collect:
+
+Name
+
+Email
+
+Shipping Address
+
+Show an order summary of items and prices.
+
+Include a mock payment section (no real processing).
+
+End with an Order Confirmation Page showing a random order number.
+
+🎨 Visual Design Requirements
+
+Use these enhancement prompts:
+
+Header:
+“Add a professional header with the store name ‘ThreadCraft’ and navigation links for Home, Products, Cart, and Contact. Use a dark blue or black background and white text.”
+
+Product Cards:
+“Improve product cards with a light shadow, rounded corners, bright green ‘Add to Cart’ button, and hover-lift effect.”
+
+Layout:
+“Add a light gray page background, consistent grid spacing, max-width for content, and proper margins/padding.”
+
+Cart Page Styling:
+“Display cart items neatly, bold total price, red ‘Remove’ buttons, and a matching ‘Continue Shopping’ button.”
+
+🧪 Testing Instructions
+
+When finished, make sure these work:
+
+All 6 products display with images, prices, sizes, and colors.
+
+Cart updates item count correctly and persists on refresh.
+
+Quantity controls change totals accurately.
+
+Checkout form collects info and shows confirmation.
+
+Order confirmation displays an order number.
+
+💾 Technical Requirements
+
+Languages: HTML, CSS, JavaScript
+
+Storage: LocalStorage
+
+Design: Responsive for mobile
+
+Now create all necessary files:
+
+index.html
+
+cart.html
+
+checkout.html
+
+confirmation.html
+
+style.css
+
+script.js
+
+Then, populate the products with placeholder or Unsplash t-shirt images and ensure the full user flow works end-to-end.
