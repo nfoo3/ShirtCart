@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import ProductCard, { Product } from "@/components/ProductCard";
+import ProductCard from "@/components/ProductCard";
+import { Product } from "@shared/schema";
 import { products } from "@/lib/products";
 import { addToCart, getCart } from "@/lib/cart";
 import { useToast } from "@/hooks/use-toast";
@@ -21,8 +22,8 @@ export default function Home() {
     return () => window.removeEventListener("cart-updated", updateCartCount);
   }, []);
 
-  const handleAddToCart = (product: Product, size: string, color: string) => {
-    addToCart(product.id, product.name, product.price, product.image, size, color);
+  const handleAddToCart = (product: Product, size: string, color: string, colorImage: string) => {
+    addToCart(product.id, product.name, product.price, colorImage, size, color);
     toast({
       title: "Added to cart!",
       description: `${product.name} (${size}, ${color})`,

@@ -2,30 +2,27 @@ import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
-
-export interface Product {
-  id: string;
-  name: string;
-  price: number;
-  description: string;
-  image: string;
-  sizes: string[];
-  colors: { name: string; value: string }[];
-}
+import { Product } from "@shared/schema";
 
 interface ProductCardProps {
   product: Product;
-  onAddToCart: (product: Product, size: string, color: string) => void;
+  onAddToCart: (product: Product, size: string, color: string, colorImage: string) => void;
 }
 
 export default function ProductCard({ product, onAddToCart }: ProductCardProps) {
   const [selectedSize, setSelectedSize] = useState(product.sizes[0]);
   const [selectedColor, setSelectedColor] = useState(product.colors[0].name);
+  const [currentImage, setCurrentImage] = useState(product.colors[0].image);
   const [added, setAdded] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
+  const handleColorChange = (colorName: string, colorImage: string) => {
+    setSelectedColor(colorName);
+    setCurrentImage(colorImage);
+  };
+
   const handleAddToCart = () => {
-    onAddToCart(product, selectedSize, selectedColor);
+    onAddToCart(product, selectedSize, selectedColor, currentImage);
     setAdded(true);
     setTimeout(() => setAdded(false), 1000);
   };
@@ -39,9 +36,9 @@ export default function ProductCard({ product, onAddToCart }: ProductCardProps) 
     >
       <div className="relative aspect-[3/4] overflow-hidden bg-muted">
         <img 
-          src={product.image} 
+          src={currentImage} 
           alt={product.name}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
           data-testid={`img-product-${product.id}`}
         />
         <div className={`absolute inset-0 bg-black/40 transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
@@ -100,7 +97,7 @@ export default function ProductCard({ product, onAddToCart }: ProductCardProps) 
                   key={color.name}
                   variant={selectedColor === color.name ? "default" : "outline"}
                   size="sm"
-                  onClick={() => setSelectedColor(color.name)}
+                  onClick={() => handleColorChange(color.name, color.image)}
                   className="text-xs uppercase"
                   data-testid={`button-color-${color.name}-${product.id}`}
                 >

@@ -1,10 +1,11 @@
-import { Product } from "@/components/ProductCard";
+import { Product } from "@shared/schema";
 import blackShirtImg from '@assets/generated_images/Black_t-shirt_product_photo_a64c865b.png';
 import whiteShirtImg from '@assets/generated_images/White_t-shirt_product_photo_ff436831.png';
 import navyShirtImg from '@assets/generated_images/Navy_blue_t-shirt_photo_ee73eba8.png';
 import grayShirtImg from '@assets/generated_images/Gray_t-shirt_product_photo_f7a55b6d.png';
 import redShirtImg from '@assets/generated_images/Red_t-shirt_product_photo_10c2c48a.png';
 import greenShirtImg from '@assets/generated_images/Green_t-shirt_product_photo_bda7c61f.png';
+import blueShirtImg from '@assets/generated_images/Blue_t-shirt_product_photo_932763cc.png';
 
 export const products: Product[] = [
   {
@@ -15,9 +16,9 @@ export const products: Product[] = [
     image: blackShirtImg,
     sizes: ["S", "M", "L", "XL"],
     colors: [
-      { name: "Black", value: "#000000" },
-      { name: "White", value: "#FFFFFF" },
-      { name: "Navy", value: "#000080" }
+      { name: "Black", value: "#000000", image: blackShirtImg },
+      { name: "White", value: "#FFFFFF", image: whiteShirtImg },
+      { name: "Navy", value: "#000080", image: navyShirtImg }
     ]
   },
   {
@@ -28,9 +29,9 @@ export const products: Product[] = [
     image: whiteShirtImg,
     sizes: ["S", "M", "L", "XL"],
     colors: [
-      { name: "White", value: "#FFFFFF" },
-      { name: "Black", value: "#000000" },
-      { name: "Gray", value: "#808080" }
+      { name: "White", value: "#FFFFFF", image: whiteShirtImg },
+      { name: "Black", value: "#000000", image: blackShirtImg },
+      { name: "Gray", value: "#808080", image: grayShirtImg }
     ]
   },
   {
@@ -41,9 +42,9 @@ export const products: Product[] = [
     image: navyShirtImg,
     sizes: ["S", "M", "L", "XL"],
     colors: [
-      { name: "Navy", value: "#000080" },
-      { name: "Black", value: "#000000" },
-      { name: "Blue", value: "#0000FF" }
+      { name: "Navy", value: "#000080", image: navyShirtImg },
+      { name: "Black", value: "#000000", image: blackShirtImg },
+      { name: "Blue", value: "#0000FF", image: blueShirtImg }
     ]
   },
   {
@@ -54,9 +55,9 @@ export const products: Product[] = [
     image: grayShirtImg,
     sizes: ["S", "M", "L", "XL"],
     colors: [
-      { name: "Gray", value: "#808080" },
-      { name: "White", value: "#FFFFFF" },
-      { name: "Black", value: "#000000" }
+      { name: "Gray", value: "#808080", image: grayShirtImg },
+      { name: "White", value: "#FFFFFF", image: whiteShirtImg },
+      { name: "Black", value: "#000000", image: blackShirtImg }
     ]
   },
   {
@@ -67,9 +68,9 @@ export const products: Product[] = [
     image: redShirtImg,
     sizes: ["S", "M", "L", "XL"],
     colors: [
-      { name: "Red", value: "#DC143C" },
-      { name: "Black", value: "#000000" },
-      { name: "White", value: "#FFFFFF" }
+      { name: "Red", value: "#DC143C", image: redShirtImg },
+      { name: "Black", value: "#000000", image: blackShirtImg },
+      { name: "White", value: "#FFFFFF", image: whiteShirtImg }
     ]
   },
   {
@@ -80,9 +81,9 @@ export const products: Product[] = [
     image: greenShirtImg,
     sizes: ["S", "M", "L", "XL"],
     colors: [
-      { name: "Green", value: "#228B22" },
-      { name: "Black", value: "#000000" },
-      { name: "Navy", value: "#000080" }
+      { name: "Green", value: "#228B22", image: greenShirtImg },
+      { name: "Black", value: "#000000", image: blackShirtImg },
+      { name: "Navy", value: "#000080", image: navyShirtImg }
     ]
   }
 ];
