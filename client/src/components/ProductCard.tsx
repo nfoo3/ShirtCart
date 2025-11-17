@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Check } from "lucide-react";
 
 export interface Product {
@@ -23,6 +22,7 @@ export default function ProductCard({ product, onAddToCart }: ProductCardProps) 
   const [selectedSize, setSelectedSize] = useState(product.sizes[0]);
   const [selectedColor, setSelectedColor] = useState(product.colors[0].name);
   const [added, setAdded] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   const handleAddToCart = () => {
     onAddToCart(product, selectedSize, selectedColor);
@@ -31,37 +31,59 @@ export default function ProductCard({ product, onAddToCart }: ProductCardProps) 
   };
 
   return (
-    <Card className="overflow-hidden hover-elevate transition-all duration-300 hover:-translate-y-1" data-testid={`card-product-${product.id}`}>
-      <div className="aspect-square overflow-hidden bg-muted">
+    <Card 
+      className="group overflow-hidden border-border hover-elevate transition-all duration-300"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      data-testid={`card-product-${product.id}`}
+    >
+      <div className="relative aspect-[3/4] overflow-hidden bg-muted">
         <img 
           src={product.image} 
           alt={product.name}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           data-testid={`img-product-${product.id}`}
         />
+        <div className={`absolute inset-0 bg-black/40 transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
+          <div className="absolute inset-0 flex items-center justify-center">
+            <Button 
+              className="uppercase tracking-wider font-semibold opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-y-0 translate-y-4"
+              onClick={handleAddToCart}
+              disabled={added}
+              data-testid={`button-quick-add-${product.id}`}
+            >
+              {added ? (
+                <>
+                  <Check className="w-4 h-4 mr-2" />
+                  Added!
+                </>
+              ) : (
+                "Quick Add"
+              )}
+            </Button>
+          </div>
+        </div>
       </div>
-      <CardContent className="p-6">
-        <h3 className="text-xl font-semibold mb-2" data-testid={`text-product-name-${product.id}`}>
+      
+      <div className="p-6 text-center">
+        <h3 className="text-lg font-serif font-semibold mb-2" data-testid={`text-product-name-${product.id}`}>
           {product.name}
         </h3>
-        <p className="text-2xl font-bold text-primary mb-3" data-testid={`text-product-price-${product.id}`}>
+        <p className="text-base font-medium mb-4" data-testid={`text-product-price-${product.id}`}>
           ${product.price.toFixed(2)}
-        </p>
-        <p className="text-sm text-muted-foreground mb-4" data-testid={`text-product-description-${product.id}`}>
-          {product.description}
         </p>
 
         <div className="space-y-3">
           <div>
-            <label className="text-sm font-medium mb-2 block">Size</label>
-            <div className="flex flex-wrap gap-2">
+            <label className="text-xs uppercase tracking-wider font-medium mb-2 block">Size</label>
+            <div className="flex flex-wrap gap-2 justify-center">
               {product.sizes.map((size) => (
                 <Button
                   key={size}
                   variant={selectedSize === size ? "default" : "outline"}
                   size="sm"
                   onClick={() => setSelectedSize(size)}
-                  className="min-w-12"
+                  className="min-w-12 text-xs uppercase"
                   data-testid={`button-size-${size}-${product.id}`}
                 >
                   {size}
@@ -71,14 +93,15 @@ export default function ProductCard({ product, onAddToCart }: ProductCardProps) 
           </div>
 
           <div>
-            <label className="text-sm font-medium mb-2 block">Color</label>
-            <div className="flex flex-wrap gap-2">
+            <label className="text-xs uppercase tracking-wider font-medium mb-2 block">Color</label>
+            <div className="flex flex-wrap gap-2 justify-center">
               {product.colors.map((color) => (
                 <Button
                   key={color.name}
                   variant={selectedColor === color.name ? "default" : "outline"}
                   size="sm"
                   onClick={() => setSelectedColor(color.name)}
+                  className="text-xs uppercase"
                   data-testid={`button-color-${color.name}-${product.id}`}
                 >
                   {color.name}
@@ -87,24 +110,17 @@ export default function ProductCard({ product, onAddToCart }: ProductCardProps) 
             </div>
           </div>
         </div>
-      </CardContent>
-      <CardFooter className="p-6 pt-0">
+
         <Button 
-          className="w-full"
+          className="w-full mt-4 uppercase tracking-wider font-semibold text-xs"
+          variant="outline"
           onClick={handleAddToCart}
           disabled={added}
           data-testid={`button-add-cart-${product.id}`}
         >
-          {added ? (
-            <>
-              <Check className="w-4 h-4 mr-2" />
-              Added!
-            </>
-          ) : (
-            "Add to Cart"
-          )}
+          {added ? "Added to Cart!" : "Add to Cart"}
         </Button>
-      </CardFooter>
+      </div>
     </Card>
   );
 }

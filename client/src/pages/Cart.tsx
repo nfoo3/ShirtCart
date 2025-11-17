@@ -36,12 +36,13 @@ export default function Cart() {
     <div className="min-h-screen bg-background">
       <Header cartItemCount={cartItemCount} />
       
-      <main className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 py-12">
+      <main className="max-w-7xl mx-auto px-6 md:px-12 py-16">
         <div className="mb-8">
-          <h1 className="text-4xl font-bold mb-4" data-testid="text-page-title">Shopping Cart</h1>
+          <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6" data-testid="text-page-title">Shopping Cart</h1>
           <Button 
             variant="ghost" 
             onClick={() => setLocation("/")}
+            className="uppercase text-xs tracking-wider"
             data-testid="button-continue-shopping"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
@@ -50,16 +51,16 @@ export default function Cart() {
         </div>
 
         {cartItems.length === 0 ? (
-          <div className="text-center py-16">
-            <ShoppingBag className="w-16 h-16 mx-auto text-muted-foreground mb-4" />
-            <h2 className="text-2xl font-semibold mb-2" data-testid="text-empty-cart">Your cart is empty</h2>
-            <p className="text-muted-foreground mb-6">Add some items to get started!</p>
-            <Button onClick={() => setLocation("/")} data-testid="button-shop-now">
+          <div className="text-center py-20">
+            <ShoppingBag className="w-20 h-20 mx-auto text-muted-foreground mb-6" />
+            <h2 className="text-3xl font-serif font-semibold mb-3" data-testid="text-empty-cart">Your cart is empty</h2>
+            <p className="text-muted-foreground mb-8 text-lg">Discover our premium collection</p>
+            <Button onClick={() => setLocation("/")} size="lg" className="uppercase tracking-wider" data-testid="button-shop-now">
               Shop Now
             </Button>
           </div>
         ) : (
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid lg:grid-cols-3 gap-10">
             <div className="lg:col-span-2 space-y-4">
               {cartItems.map((item) => (
                 <CartItem
@@ -75,7 +76,7 @@ export default function Cart() {
               <div className="sticky top-24 space-y-4">
                 <OrderSummary subtotal={subtotal} tax={tax} total={total} />
                 <Button 
-                  className="w-full" 
+                  className="w-full uppercase tracking-wider font-semibold" 
                   size="lg"
                   onClick={() => setLocation("/checkout")}
                   data-testid="button-proceed-checkout"

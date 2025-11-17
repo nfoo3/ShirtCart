@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Header from "@/components/Header";
+import Hero from "@/components/Hero";
 import ProductCard, { Product } from "@/components/ProductCard";
 import { products } from "@/lib/products";
 import { addToCart, getCart } from "@/lib/cart";
@@ -31,12 +32,15 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       <Header cartItemCount={cartItemCount} />
+      <Hero />
       
-      <main className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 py-12">
-        <div className="mb-8">
-          <h1 className="text-4xl font-bold mb-2" data-testid="text-page-title">Premium T-Shirt Collection</h1>
-          <p className="text-muted-foreground" data-testid="text-page-subtitle">
-            High-quality essentials for your wardrobe
+      <main className="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-24">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4" data-testid="text-page-title">
+            Premium Collection
+          </h2>
+          <p className="text-muted-foreground text-lg" data-testid="text-page-subtitle">
+            Timeless essentials crafted for everyday luxury
           </p>
         </div>
 

@@ -1,83 +1,101 @@
 # ThreadCraft E-Commerce Design Guidelines
+**Inspired by MVMTH - Premium Fashion E-commerce**
 
-## Design Approach: Reference-Based (E-commerce)
-Drawing inspiration from modern e-commerce leaders like Shopify, Etsy, and premium fashion retailers, with emphasis on clean product presentation and frictionless shopping experience.
+## Design Approach
+Drawing inspiration from premium fashion retailers like MVMTH, focusing on lifestyle imagery, elegant typography, and a sophisticated shopping experience that emphasizes visual storytelling over standard product grids.
 
 ## Typography System
-- **Primary Font**: Inter or similar modern sans-serif via Google Fonts
-- **Headings**: Font weight 700, sizes: h1 (3rem/48px), h2 (2rem/32px), h3 (1.5rem/24px)
-- **Body Text**: Font weight 400, size 1rem/16px, line-height 1.6
-- **Product Names**: Font weight 600, size 1.25rem/20px
-- **Pricing**: Font weight 700, size 1.5rem/24px for emphasis
-- **Cart Counter Badge**: Font weight 700, size 0.875rem/14px
+- **Primary Font**: Playfair Display (serif) for headings - elegant, premium feel
+- **Secondary Font**: Inter (sans-serif) for body text - clean, readable
+- **Headings**: 
+  - h1: 3.5rem (56px), font-weight 700, Playfair Display
+  - h2: 2.5rem (40px), font-weight 700, Playfair Display
+  - h3: 1.75rem (28px), font-weight 600, Playfair Display
+- **Body Text**: 1rem (16px), font-weight 400, Inter
+- **Buttons**: 0.875rem (14px), font-weight 600, Inter, uppercase tracking
 
-## Layout & Spacing System
-**Tailwind Units**: Consistently use 4, 6, 8, 12, and 16 for spacing
-- Page padding: `px-4 md:px-8 lg:px-16`
-- Section spacing: `py-12 md:py-16`
-- Card padding: `p-6`
-- Grid gaps: `gap-6 md:gap-8`
-- Container max-width: `max-w-7xl mx-auto`
+## Color Palette
+- **Primary Brand**: Deep burgundy/dark red (#8B1E1E) for CTAs and accents
+- **Background**: Off-white (#FAFAFA) for main background
+- **Text**: Near-black (#1A1A1A) for primary text
+- **Secondary Text**: Medium gray (#666666)
+- **White**: Pure white (#FFFFFF) for cards and contrast
+- **Borders**: Light gray (#E5E5E5) for subtle divisions
+
+## Layout & Spacing
+- **Container**: max-w-7xl, generous padding (px-6 md:px-12 lg:px-16)
+- **Hero Section**: Full-width with overlay text, minimum height 500px
+- **Section Spacing**: py-16 md:py-24 between major sections
+- **Card Spacing**: gap-6 md:gap-8 for grids
+- **Inner Padding**: p-8 md:p-12 for cards with text content
 
 ## Component Library
 
-### Header/Navigation
-- Full-width sticky header with `shadow-md`
-- Logo left-aligned, navigation center, cart icon right
-- Navigation links with `px-6` spacing, underline on hover
-- Cart badge: Circular, absolute positioned top-right of cart icon
+### Header
+- Minimal, centered logo design
+- Sticky navigation with white background
+- Links: MENS, WOMENS, BRAND (uppercase, small font)
+- Right-aligned icons: Search, Account, Cart
+- Height: 72px, subtle shadow on scroll
 
-### Product Grid
-- Responsive grid: `grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8`
-- Product cards: `rounded-lg shadow-lg` with `hover:shadow-xl hover:-translate-y-1 transition-all duration-300`
-- Card structure: Image (aspect-ratio 4:3), content padding `p-6`
-- Size/Color selectors: Inline flex with `gap-2`, buttons with `rounded-full px-4 py-2 border-2`
-- Selected state: Solid background, unselected: Border only
+### Hero Section
+- Full-width banner with lifestyle photography
+- Overlay gradient for text readability
+- Large headline with promotional text
+- Dual CTA buttons (primary + secondary)
+- Minimum height: 60vh on desktop, 50vh on mobile
 
-### Shopping Cart Page
-- Two-column layout on desktop: `lg:grid-cols-3`
-- Cart items: Left column (col-span-2), summary right (col-span-1 sticky top-24)
-- Item cards: Flex layout, image left (w-24 h-24), details center, controls right
-- Quantity controls: Circular buttons with `w-8 h-8`, center-aligned text
-- Price summary: Right-aligned text with dividers, total in larger bold text
+### Product Cards
+- Large aspect ratio images (3:4 or lifestyle shots)
+- Hover effect: subtle zoom on image
+- Minimal text overlay on images with product name
+- Price prominent but elegant
+- "SHOP NOW" button appears on hover
+- White background cards with subtle shadow
 
-### Checkout Flow
-- Single column centered layout: `max-w-2xl mx-auto`
-- Form groups: `space-y-4`
-- Input fields: `w-full px-4 py-3 rounded-lg border-2 focus:border-blue-500`
-- Order summary sidebar (desktop): Sticky panel with `bg-gray-50 p-6 rounded-lg`
-- Payment section: Card-style visual with icon placeholders for security
+### Category Sections
+- Large lifestyle images with category overlay
+- Text overlay: Category name + "SHOP ALL" link
+- Grid layout: 2 columns on mobile, 3-4 on desktop
+- Images should inspire lifestyle/aspiration
 
-### Confirmation Page
-- Success icon: Large centered checkmark (text-6xl)
-- Order number: Monospace font, large size (text-2xl), highlighted background
-- Order details: Clean table layout with `divide-y` borders
+### Cart & Checkout
+- Clean, spacious layout
+- Thumbnail images (80px x 80px)
+- Large, readable pricing
+- Sticky order summary on desktop
+- Progress indicator for checkout steps
 
 ## Images Strategy
-**Product Images**: 6 high-quality t-shirt product photos showing different angles/colors
-- Use Unsplash with search terms: "t-shirt mockup", "blank tshirt", "folded shirt"
-- Consistent aspect ratio 4:3 or 1:1
-- White or neutral backgrounds for product clarity
-- Placement: Featured in product cards, cart thumbnails, checkout summary
+**Hero/Lifestyle Images**: 
+- Aspirational lifestyle photography
+- Models wearing products in authentic settings
+- Professional photography with good lighting
+- Aspect ratio: 16:9 for hero, 3:4 for product cards
+- Focus on emotion and lifestyle over product details
 
-**No Hero Section**: Jump directly into product grid - this is a conversion-focused store
+**Product Images**:
+- Clean, minimal backgrounds
+- Consistent lighting and styling
+- Show products in use when possible
+- Multiple angles available on product pages
 
 ## Interaction Patterns
-- **Add to Cart**: Button expands briefly with checkmark animation on click
-- **Cart Counter**: Bounce animation when number updates
-- **Product Cards**: Subtle lift on hover with shadow increase
-- **Form Validation**: Inline error messages in red below fields
-- **Loading States**: Disable buttons with opacity-50 during actions
-- **Remove Item**: Fade-out animation before removal
+- **Buttons**: Uppercase text, subtle hover scale (1.02), background color darkens
+- **Cards**: Image zoom on hover, shadow deepens
+- **Links**: Underline on hover, smooth transition
+- **Hero CTA**: Prominent primary button (burgundy), secondary button (outline)
+- **Smooth Scrolling**: For navigation links
+- **Add to Cart**: Success feedback with brief animation
 
 ## Responsive Behavior
-- **Mobile (< 768px)**: Single column, sticky bottom cart button, simplified header
-- **Tablet (768-1024px)**: 2-column product grid, collapsible cart summary
-- **Desktop (> 1024px)**: 3-column product grid, persistent cart summary sidebar
+- **Mobile**: Single column, stacked layout, full-width hero
+- **Tablet**: 2-column grids, adjusted hero text size
+- **Desktop**: 3-4 column grids, side-by-side hero elements, sticky elements
 
 ## Accessibility
-- All interactive elements: `focus:ring-2 focus:ring-offset-2`
-- Color contrast minimum WCAG AA compliance
-- Form labels properly associated with inputs
-- Cart counter uses `aria-label="Items in cart"`
-- Semantic HTML: `<main>`, `<nav>`, `<article>` for products
+- WCAG AA contrast ratios
+- Focus indicators on all interactive elements
+- Semantic HTML structure
+- Alt text for all images
+- Keyboard navigation support

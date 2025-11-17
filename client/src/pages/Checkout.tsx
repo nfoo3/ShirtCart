@@ -67,16 +67,16 @@ export default function Checkout() {
     <div className="min-h-screen bg-background">
       <Header cartItemCount={cartItemCount} />
       
-      <main className="max-w-5xl mx-auto px-4 md:px-8 py-12">
-        <h1 className="text-4xl font-bold mb-8" data-testid="text-page-title">Checkout</h1>
+      <main className="max-w-6xl mx-auto px-6 md:px-12 py-16">
+        <h1 className="text-4xl md:text-5xl font-serif font-bold mb-12" data-testid="text-page-title">Checkout</h1>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-3 gap-10">
           <div className="lg:col-span-2">
             <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
                 <Card>
                   <CardHeader>
-                    <CardTitle>Shipping Information</CardTitle>
+                    <CardTitle className="font-serif">Shipping Information</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <FormField
@@ -84,7 +84,7 @@ export default function Checkout() {
                       name="name"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Full Name</FormLabel>
+                          <FormLabel className="text-xs uppercase tracking-wider">Full Name</FormLabel>
                           <FormControl>
                             <Input placeholder="John Doe" {...field} data-testid="input-name" />
                           </FormControl>
@@ -98,7 +98,7 @@ export default function Checkout() {
                       name="email"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Email</FormLabel>
+                          <FormLabel className="text-xs uppercase tracking-wider">Email</FormLabel>
                           <FormControl>
                             <Input type="email" placeholder="john@example.com" {...field} data-testid="input-email" />
                           </FormControl>
@@ -112,7 +112,7 @@ export default function Checkout() {
                       name="address"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Address</FormLabel>
+                          <FormLabel className="text-xs uppercase tracking-wider">Address</FormLabel>
                           <FormControl>
                             <Input placeholder="123 Main St" {...field} data-testid="input-address" />
                           </FormControl>
@@ -127,7 +127,7 @@ export default function Checkout() {
                         name="city"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>City</FormLabel>
+                            <FormLabel className="text-xs uppercase tracking-wider">City</FormLabel>
                             <FormControl>
                               <Input placeholder="City" {...field} data-testid="input-city" />
                             </FormControl>
@@ -141,7 +141,7 @@ export default function Checkout() {
                         name="state"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>State</FormLabel>
+                            <FormLabel className="text-xs uppercase tracking-wider">State</FormLabel>
                             <FormControl>
                               <Input placeholder="State" {...field} data-testid="input-state" />
                             </FormControl>
@@ -155,7 +155,7 @@ export default function Checkout() {
                         name="zip"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>ZIP</FormLabel>
+                            <FormLabel className="text-xs uppercase tracking-wider">ZIP</FormLabel>
                             <FormControl>
                               <Input placeholder="12345" {...field} data-testid="input-zip" />
                             </FormControl>
@@ -169,7 +169,7 @@ export default function Checkout() {
 
                 <Card>
                   <CardHeader>
-                    <CardTitle className="flex items-center gap-2">
+                    <CardTitle className="flex items-center gap-2 font-serif">
                       <CreditCard className="w-5 h-5" />
                       Payment Information
                     </CardTitle>
@@ -185,7 +185,7 @@ export default function Checkout() {
                       name="cardNumber"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Card Number</FormLabel>
+                          <FormLabel className="text-xs uppercase tracking-wider">Card Number</FormLabel>
                           <FormControl>
                             <Input placeholder="1234 5678 9012 3456" {...field} data-testid="input-card-number" />
                           </FormControl>
@@ -200,7 +200,7 @@ export default function Checkout() {
                         name="expiry"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Expiry Date</FormLabel>
+                            <FormLabel className="text-xs uppercase tracking-wider">Expiry Date</FormLabel>
                             <FormControl>
                               <Input placeholder="MM/YY" {...field} data-testid="input-expiry" />
                             </FormControl>
@@ -214,7 +214,7 @@ export default function Checkout() {
                         name="cvv"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>CVV</FormLabel>
+                            <FormLabel className="text-xs uppercase tracking-wider">CVV</FormLabel>
                             <FormControl>
                               <Input placeholder="123" {...field} data-testid="input-cvv" />
                             </FormControl>
@@ -226,7 +226,7 @@ export default function Checkout() {
                   </CardContent>
                 </Card>
 
-                <Button type="submit" className="w-full" size="lg" data-testid="button-place-order">
+                <Button type="submit" className="w-full uppercase tracking-wider font-semibold" size="lg" data-testid="button-place-order">
                   Place Order
                 </Button>
               </form>
@@ -234,17 +234,17 @@ export default function Checkout() {
           </div>
 
           <div className="lg:col-span-1">
-            <div className="sticky top-24">
+            <div className="sticky top-24 space-y-4">
               <OrderSummary subtotal={subtotal} tax={tax} total={total} />
               
-              <Card className="mt-4">
+              <Card>
                 <CardHeader>
-                  <CardTitle className="text-base">Order Items ({cartItemCount})</CardTitle>
+                  <CardTitle className="text-base font-serif">Order Items ({cartItemCount})</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
                   {cartItems.map((item) => (
                     <div key={item.id} className="flex gap-3">
-                      <div className="w-12 h-12 rounded bg-muted overflow-hidden flex-shrink-0">
+                      <div className="w-16 h-16 rounded bg-muted overflow-hidden flex-shrink-0">
                         <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
                       </div>
                       <div className="flex-1 min-w-0">
