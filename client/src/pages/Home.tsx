@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import FeaturedSection from "@/components/FeaturedSection";
 import ProductCard from "@/components/ProductCard";
+import LifestyleGallery from "@/components/LifestyleGallery";
 import { Product } from "@shared/schema";
 import { products } from "@/lib/products";
 import { addToCart, getCart } from "@/lib/cart";
@@ -85,6 +86,8 @@ export default function Home() {
           ))}
         </div>
       </main>
+      
+      <LifestyleGallery />
     </div>
   );
 }

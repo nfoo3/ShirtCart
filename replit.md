@@ -9,6 +9,7 @@ ThreadCraft is a premium custom t-shirt e-commerce web application that provides
 **November 18, 2025**
 - Added gender filtering system (mens/womens/unisex) with active state indicators in header navigation
 - Implemented featured collection section with product imagery showcasing color variety
+- Added lifestyle gallery section below product grid with masonry-style image layout (5 curated lifestyle images)
 - Dynamic page titles based on active gender filter ("Men's Collection", "Women's Collection", "Premium Collection")
 - All products now have gender categorization in schema with unisex items appearing in both filtered views
 
