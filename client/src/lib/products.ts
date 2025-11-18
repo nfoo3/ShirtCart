@@ -15,6 +15,7 @@ export const products: Product[] = [
     description: "Premium cotton blend for ultimate comfort and durability",
     image: blackShirtImg,
     sizes: ["S", "M", "L", "XL"],
+    gender: "mens",
     colors: [
       { name: "Black", value: "#000000", image: blackShirtImg },
       { name: "White", value: "#FFFFFF", image: whiteShirtImg },
@@ -28,6 +29,7 @@ export const products: Product[] = [
     description: "Breathable fabric perfect for everyday wear",
     image: whiteShirtImg,
     sizes: ["S", "M", "L", "XL"],
+    gender: "womens",
     colors: [
       { name: "White", value: "#FFFFFF", image: whiteShirtImg },
       { name: "Black", value: "#000000", image: blackShirtImg },
@@ -41,6 +43,7 @@ export const products: Product[] = [
     description: "Timeless design with modern fit and premium quality",
     image: navyShirtImg,
     sizes: ["S", "M", "L", "XL"],
+    gender: "mens",
     colors: [
       { name: "Navy", value: "#000080", image: navyShirtImg },
       { name: "Black", value: "#000000", image: blackShirtImg },
@@ -54,6 +57,7 @@ export const products: Product[] = [
     description: "Soft heather fabric with a comfortable relaxed fit",
     image: grayShirtImg,
     sizes: ["S", "M", "L", "XL"],
+    gender: "unisex",
     colors: [
       { name: "Gray", value: "#808080", image: grayShirtImg },
       { name: "White", value: "#FFFFFF", image: whiteShirtImg },
@@ -67,6 +71,7 @@ export const products: Product[] = [
     description: "Bold color with excellent fade resistance",
     image: redShirtImg,
     sizes: ["S", "M", "L", "XL"],
+    gender: "womens",
     colors: [
       { name: "Red", value: "#DC143C", image: redShirtImg },
       { name: "Black", value: "#000000", image: blackShirtImg },
@@ -80,6 +85,7 @@ export const products: Product[] = [
     description: "Rich earth tone with sustainable cotton blend",
     image: greenShirtImg,
     sizes: ["S", "M", "L", "XL"],
+    gender: "mens",
     colors: [
       { name: "Green", value: "#228B22", image: greenShirtImg },
       { name: "Black", value: "#000000", image: blackShirtImg },

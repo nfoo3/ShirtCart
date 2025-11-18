@@ -4,19 +4,33 @@ import { Badge } from "@/components/ui/badge";
 
 interface HeaderProps {
   cartItemCount: number;
+  selectedGender?: string;
+  onGenderChange?: (gender: string) => void;
 }
 
-export default function Header({ cartItemCount }: HeaderProps) {
+export default function Header({ cartItemCount, selectedGender, onGenderChange }: HeaderProps) {
   return (
     <header className="sticky top-0 z-50 w-full bg-card border-b border-border">
       <div className="max-w-7xl mx-auto px-6 md:px-12 h-18 flex items-center justify-between">
         <nav className="hidden md:flex items-center gap-8">
-          <Link href="/" className="text-xs uppercase tracking-wider hover:text-muted-foreground transition-colors" data-testid="link-mens">
+          <button 
+            onClick={() => onGenderChange?.("mens")}
+            className={`text-xs uppercase tracking-wider hover:text-foreground transition-colors ${
+              selectedGender === "mens" ? "text-foreground font-semibold" : "text-muted-foreground"
+            }`}
+            data-testid="link-mens"
+          >
             MENS
-          </Link>
-          <Link href="/" className="text-xs uppercase tracking-wider hover:text-muted-foreground transition-colors" data-testid="link-womens">
+          </button>
+          <button 
+            onClick={() => onGenderChange?.("womens")}
+            className={`text-xs uppercase tracking-wider hover:text-foreground transition-colors ${
+              selectedGender === "womens" ? "text-foreground font-semibold" : "text-muted-foreground"
+            }`}
+            data-testid="link-womens"
+          >
             WOMENS
-          </Link>
+          </button>
         </nav>
         
         <Link href="/" className="text-2xl md:text-3xl font-serif font-bold tracking-wider" data-testid="link-home">

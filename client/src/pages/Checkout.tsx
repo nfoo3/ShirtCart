@@ -65,7 +65,7 @@ export default function Checkout() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header cartItemCount={cartItemCount} />
+      <Header cartItemCount={cartItemCount} selectedGender="all" />
       
       <main className="max-w-6xl mx-auto px-6 md:px-12 py-16">
         <h1 className="text-4xl md:text-5xl font-serif font-bold mb-12" data-testid="text-page-title">Checkout</h1>

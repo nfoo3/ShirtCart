@@ -9,6 +9,7 @@ import { useToast } from "@/hooks/use-toast";
 
 export default function Home() {
   const [cartItemCount, setCartItemCount] = useState(0);
+  const [selectedGender, setSelectedGender] = useState<string>("all");
   const { toast } = useToast();
 
   useEffect(() => {
@@ -30,23 +31,50 @@ export default function Home() {
     });
   };
 
+  const handleGenderChange = (gender: string) => {
+    setSelectedGender(gender);
+  };
+
+  const filteredProducts = selectedGender === "all" 
+    ? products 
+    : products.filter(p => p.gender === selectedGender || p.gender === "unisex");
+
+  const getCollectionTitle = () => {
+    if (selectedGender === "mens") return "Men's Collection";
+    if (selectedGender === "womens") return "Women's Collection";
+    return "Premium Collection";
+  };
+
   return (
     <div className="min-h-screen bg-background">
-      <Header cartItemCount={cartItemCount} />
+      <Header 
+        cartItemCount={cartItemCount} 
+        selectedGender={selectedGender}
+        onGenderChange={handleGenderChange}
+      />
       <Hero />
       
       <main className="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-24">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4" data-testid="text-page-title">
-            Premium Collection
+            {getCollectionTitle()}
           </h2>
           <p className="text-muted-foreground text-lg" data-testid="text-page-subtitle">
             Timeless essentials crafted for everyday luxury
           </p>
+          {selectedGender !== "all" && (
+            <button
+              onClick={() => setSelectedGender("all")}
+              className="mt-4 text-sm text-muted-foreground hover:text-foreground underline"
+              data-testid="button-view-all"
+            >
+              View All Products
+            </button>
+          )}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {products.map((product) => (
+          {filteredProducts.map((product) => (
             <ProductCard
               key={product.id}
               product={product}

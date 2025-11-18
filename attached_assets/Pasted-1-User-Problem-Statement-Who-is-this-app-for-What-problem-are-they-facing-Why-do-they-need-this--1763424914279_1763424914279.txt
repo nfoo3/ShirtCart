@@ -1,0 +1,29 @@
+1. User Problem Statement
+Who is this app for? What problem are they facing? Why do they need this tool?
+This app is for consumers that are looking for basic t-shirts/essentials. There are a lot of clothing brands that overcomplicate their designs and can make even the essential items unaffordable. This app is needed for making basics accessible and the UI is designed in such a way that it should help users navigate through to what they need quickly.
+
+2. Core Features List
+Describe how you'll implement the 3 required features: 
+Shopping Cart System: The shopping cart will be easily available in the top right of the screen where users can click on the individual items they want, as well as the desired quantity, and then navigate to their cart to complete the purchase.
+Checkout Process: The checkout process will collect the information of the user in a simple format so it is quick and painless to complete the purchase. After the payment process is complete, the users will be shown an “Order Complete” screen.
+Product Catalog Display: A simplistic view of t-shirts will be displayed, having about 3 shown per row so that they can see the detail of the shirt and have a variety of shirts on display at once. Users will be able to choose their shirts’ size and color from the display directly, as well as add it to the cart. 
+
+3. Technical Requirement
+● Programming Languages: HTML, CSS, JavaScript
+● User Interface: Responsive web design
+● Data Storage: Local storage for cart persistence
+
+
+4. Success Criteria
+How will you know your e-commerce website works? 
+If a user can successfully go from the product display page, add an item to the cart, complete the purchase of the item, and see the order complete screen.
+
+5. Basic User Flow Diagram
+Use text and arrows to show user navigation:
+Homepage with Product Grid ->
+Select Gender ->
+Click individual items or click add to cart straight from item ->
+Shopping cart page ->
+Information page ->
+Complete purchase ->
+Thank you for your order confirmation page

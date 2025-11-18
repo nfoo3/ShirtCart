@@ -34,7 +34,7 @@ export default function Cart() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header cartItemCount={cartItemCount} />
+      <Header cartItemCount={cartItemCount} selectedGender="all" />
       
       <main className="max-w-7xl mx-auto px-6 md:px-12 py-16">
         <div className="mb-8">

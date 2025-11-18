@@ -32,6 +32,7 @@ export const productSchema = z.object({
   image: z.string(),
   sizes: z.array(z.string()),
   colors: z.array(productColorSchema),
+  gender: z.enum(["mens", "womens", "unisex"]),
 });
 
 export type ProductColor = z.infer<typeof productColorSchema>;

@@ -27,7 +27,7 @@ export default function Confirmation() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header cartItemCount={0} />
+      <Header cartItemCount={0} selectedGender="all" />
       
       <main className="max-w-4xl mx-auto px-6 md:px-12 py-16">
         <div className="text-center mb-12">
