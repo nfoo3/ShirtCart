@@ -1,7 +1,20 @@
 import { Button } from "@/components/ui/button";
 import heroImage from '@assets/generated_images/Hero_lifestyle_couple_photo_8c493c80.png';
 
-export default function Hero() {
+interface HeroProps {
+  onGenderChange?: (gender: string) => void;
+}
+
+export default function Hero({ onGenderChange }: HeroProps) {
+  const handleScroll = (gender: string) => {
+    onGenderChange?.(gender);
+    // Scroll to products section
+    const productsSection = document.querySelector('main');
+    if (productsSection) {
+      productsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative h-[60vh] min-h-[500px] overflow-hidden">
       <div className="absolute inset-0">
@@ -28,6 +41,7 @@ export default function Hero() {
             <Button 
               size="lg"
               className="uppercase tracking-wider font-semibold"
+              onClick={() => handleScroll("mens")}
               data-testid="button-shop-mens"
             >
               Shop Mens
@@ -36,6 +50,7 @@ export default function Hero() {
               size="lg" 
               variant="outline"
               className="uppercase tracking-wider font-semibold bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white hover:text-foreground"
+              onClick={() => handleScroll("womens")}
               data-testid="button-shop-womens"
             >
               Shop Womens

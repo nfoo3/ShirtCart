@@ -54,7 +54,7 @@ export default function Home() {
         selectedGender={selectedGender}
         onGenderChange={handleGenderChange}
       />
-      <Hero />
+      <Hero onGenderChange={handleGenderChange} />
       <FeaturedSection />
       
       <main className="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-24">

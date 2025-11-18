@@ -61,7 +61,7 @@ export function updateCartItemQuantity(itemId: string, quantity: number): void {
 export function removeFromCart(itemId: string): void {
   const cart = getCart();
   const filtered = cart.filter((item) => item.id !== itemId);
-  saveCart(cart);
+  saveCart(filtered);
   window.dispatchEvent(new Event("cart-updated"));
 }
 
