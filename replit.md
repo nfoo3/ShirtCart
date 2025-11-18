@@ -4,6 +4,14 @@
 
 ThreadCraft is a premium custom t-shirt e-commerce web application that provides an elegant shopping experience. The platform features a product catalog, shopping cart system with localStorage persistence, and a complete checkout flow. Built with React and TypeScript on the frontend, with an Express backend, the application emphasizes sophisticated visual design inspired by premium fashion retailers.
 
+## Recent Changes
+
+**November 18, 2025**
+- Added gender filtering system (mens/womens/unisex) with active state indicators in header navigation
+- Implemented featured collection section with product imagery showcasing color variety
+- Dynamic page titles based on active gender filter ("Men's Collection", "Women's Collection", "Premium Collection")
+- All products now have gender categorization in schema with unisex items appearing in both filtered views
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
@@ -54,12 +62,14 @@ Preferred communication style: Simple, everyday language.
 ### Application Flow
 
 **Shopping Experience**
-1. Home page displays hero section with promotional content and product grid
-2. Product cards show images, pricing, and size/color selection with real-time preview
-3. Add to cart functionality with immediate visual feedback via toast notifications
-4. Cart page with quantity controls, item removal, and automatic tax calculation (8.5%)
-5. Checkout form with validation using React Hook Form and Zod schemas
-6. Order confirmation page with generated order number stored in localStorage
+1. Home page displays hero section with promotional content, featured collection showcase, and product grid
+2. Featured section highlights product variety with high-quality imagery and color swatches
+3. Gender filtering (MENS/WOMENS) allows users to browse category-specific collections
+4. Product cards show images, pricing, and size/color selection with real-time color-switching preview
+5. Add to cart functionality with immediate visual feedback via toast notifications
+6. Cart page with quantity controls, item removal, and automatic tax calculation (8.5%)
+7. Checkout form with validation using React Hook Form and Zod schemas
+8. Order confirmation page with generated order number stored in localStorage
 
 **Cart Persistence**
 - Cart data stored in localStorage under `threadcraft_cart` key

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import FeaturedSection from "@/components/FeaturedSection";
 import ProductCard from "@/components/ProductCard";
 import { Product } from "@shared/schema";
 import { products } from "@/lib/products";
@@ -53,6 +54,7 @@ export default function Home() {
         onGenderChange={handleGenderChange}
       />
       <Hero />
+      <FeaturedSection />
       
       <main className="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-24">
         <div className="text-center mb-12">
