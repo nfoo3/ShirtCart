@@ -1,8 +1,7 @@
 import image1 from '@assets/stock_images/light_green_t-shirt__e96eea4e.jpg';
 import image2 from '@assets/stock_images/white_t-shirt_hangin_b5f77178.jpg';
-import image3 from '@assets/stock_images/beige_neutral_t-shir_02e0ef07.jpg';
-import image4 from '@assets/stock_images/person_wearing_casua_a6a781e1.jpg';
-import image5 from '@assets/stock_images/premium_cotton_t-shi_0f7931e1.jpg';
+import image3 from '@assets/stock_images/person_wearing_casua_a6a781e1.jpg';
+import image4 from '@assets/stock_images/premium_cotton_t-shi_0f7931e1.jpg';
 
 export default function LifestyleGallery() {
   return (
@@ -44,31 +43,20 @@ export default function LifestyleGallery() {
             <div className="relative h-full min-h-[195px] rounded-md overflow-hidden">
               <img 
                 src={image3} 
-                alt="Folded neutral tone t-shirt" 
+                alt="Lifestyle photo of person wearing casual t-shirt" 
                 className="w-full h-full object-cover hover-elevate transition-all"
                 data-testid="img-gallery-3"
               />
             </div>
           </div>
 
-          <div className="col-span-1 row-span-1">
+          <div className="col-span-2 row-span-1">
             <div className="relative h-full min-h-[195px] rounded-md overflow-hidden">
               <img 
                 src={image4} 
-                alt="Lifestyle photo of person wearing casual t-shirt" 
-                className="w-full h-full object-cover hover-elevate transition-all"
-                data-testid="img-gallery-4"
-              />
-            </div>
-          </div>
-
-          <div className="col-span-1 row-span-1">
-            <div className="relative h-full min-h-[195px] rounded-md overflow-hidden">
-              <img 
-                src={image5} 
                 alt="Close up of premium cotton fabric texture" 
                 className="w-full h-full object-cover hover-elevate transition-all"
-                data-testid="img-gallery-5"
+                data-testid="img-gallery-4"
               />
             </div>
           </div>
