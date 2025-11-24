@@ -15,7 +15,7 @@ export default function Header({ cartItemCount, selectedGender, onGenderChange }
         <nav className="hidden md:flex items-center gap-8">
           <button 
             onClick={() => onGenderChange?.("mens")}
-            className={`text-xs uppercase tracking-wider hover:text-foreground transition-colors ${
+            className={`text-[0.9375rem] uppercase tracking-wider hover:text-foreground transition-colors ${
               selectedGender === "mens" ? "text-foreground font-semibold" : "text-muted-foreground"
             }`}
             data-testid="link-mens"
@@ -24,7 +24,7 @@ export default function Header({ cartItemCount, selectedGender, onGenderChange }
           </button>
           <button 
             onClick={() => onGenderChange?.("womens")}
-            className={`text-xs uppercase tracking-wider hover:text-foreground transition-colors ${
+            className={`text-[0.9375rem] uppercase tracking-wider hover:text-foreground transition-colors ${
               selectedGender === "womens" ? "text-foreground font-semibold" : "text-muted-foreground"
             }`}
             data-testid="link-womens"
@@ -39,13 +39,13 @@ export default function Header({ cartItemCount, selectedGender, onGenderChange }
         
         <div className="flex items-center gap-4">
           <button className="hover:text-muted-foreground transition-colors" data-testid="button-search">
-            <Search className="w-5 h-5" />
+            <Search className="w-[1.5625rem] h-[1.5625rem]" />
           </button>
           <button className="hover:text-muted-foreground transition-colors" data-testid="button-account">
-            <User className="w-5 h-5" />
+            <User className="w-[1.5625rem] h-[1.5625rem]" />
           </button>
           <Link href="/cart" className="relative hover:text-muted-foreground transition-colors" data-testid="button-cart">
-            <ShoppingCart className="w-5 h-5" />
+            <ShoppingCart className="w-[1.5625rem] h-[1.5625rem]" />
             {cartItemCount > 0 && (
               <Badge 
                 className="absolute -top-2 -right-2 h-5 w-5 flex items-center justify-center p-0 text-xs bg-primary text-primary-foreground"
