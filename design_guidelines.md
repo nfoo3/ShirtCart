@@ -15,7 +15,7 @@ Drawing inspiration from premium fashion retailers like MVMTH, focusing on lifes
 - **Buttons**: 0.875rem (14px), font-weight 600, Inter, uppercase tracking
 
 ## Color Palette
-- **Primary Brand**: Deep burgundy/dark red (#8B1E1E) for CTAs and accents
+- **Primary Brand**: Deep indigo (HSL: 235 70% 35%) for CTAs and accents
 - **Background**: Off-white (#FAFAFA) for main background
 - **Text**: Near-black (#1A1A1A) for primary text
 - **Secondary Text**: Medium gray (#666666)
@@ -34,8 +34,8 @@ Drawing inspiration from premium fashion retailers like MVMTH, focusing on lifes
 ### Header
 - Minimal, centered logo design
 - Sticky navigation with white background
-- Links: MENS, WOMENS, BRAND (uppercase, small font)
-- Right-aligned icons: Search, Account, Cart
+- Links: MENS, WOMENS (uppercase, 15px font - 25% larger than standard)
+- Right-aligned icons: Search, Account, Cart (25px size - 25% larger than standard)
 - Height: 72px, subtle shadow on scroll
 
 ### Hero Section
@@ -84,7 +84,7 @@ Drawing inspiration from premium fashion retailers like MVMTH, focusing on lifes
 - **Buttons**: Uppercase text, subtle hover scale (1.02), background color darkens
 - **Cards**: Image zoom on hover, shadow deepens
 - **Links**: Underline on hover, smooth transition
-- **Hero CTA**: Prominent primary button (burgundy), secondary button (outline)
+- **Hero CTA**: Prominent primary button (deep indigo), secondary button (outline)
 - **Smooth Scrolling**: For navigation links
 - **Add to Cart**: Success feedback with brief animation
 
