@@ -6,6 +6,14 @@ ThreadCraft is a premium custom t-shirt e-commerce web application that provides
 
 ## Recent Changes
 
+**November 24, 2025**
+- Updated color scheme from burgundy to deep indigo (HSL: 235 70% 35% in light mode, 235 70% 45% in dark mode)
+- Increased MENS/WOMENS navigation labels by 25% (12px → 15px)
+- Increased header icons (Search, User, Cart) by 25% (20px → 25px)
+- Fixed critical cart removal bug where removeFromCart was saving original cart instead of filtered array
+- Wired Hero component gender filter buttons to trigger filtering and smooth scroll to products section
+- Updated design_guidelines.md to reflect new indigo color scheme and larger header elements
+
 **November 18, 2025**
 - Added gender filtering system (mens/womens/unisex) with active state indicators in header navigation
 - Implemented featured collection section with product imagery showcasing color variety
@@ -37,8 +45,9 @@ Preferred communication style: Simple, everyday language.
 - Custom event system (`cart-updated` events) for cross-component cart synchronization
 
 **Design System**
-- Custom color palette with deep burgundy primary color (#8B1E1E)
+- Custom color palette with deep indigo primary color (HSL: 235 70% 35%)
 - Off-white background (#FAFAFA) with near-black text (#1A1A1A)
+- Enhanced header with 25% larger navigation labels (15px) and icons (25px)
 - Responsive grid layouts with breakpoints for mobile, tablet, and desktop
 - Premium aesthetic focused on lifestyle imagery and elegant spacing
 
