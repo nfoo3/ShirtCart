@@ -12,7 +12,7 @@ An ecommerce website for a simple tshirt store created as part of a VibeCoding 1
 - TanStack Query (React Query) for server state management and caching
 - LocalStorage for cart persistence across sessions
 ## Live Demo
-[View the live site here](https://replit.com/t/campus-siokn4/repls/ShirtCart)
+[(https://shirt-cart-nilesfoo.replit.app)](https://replit.com/t/campus-siokn4/repls/ShirtCart)
 ## What I Learned
 - How to create and design an interactive ecommerce website
 - Using LocalStorage for saving shopping cart data
