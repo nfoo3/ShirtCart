@@ -6,6 +6,9 @@ import grayShirtImg from '@assets/generated_images/Gray_t-shirt_product_photo_f7
 import redShirtImg from '@assets/generated_images/Red_t-shirt_product_photo_10c2c48a.png';
 import greenShirtImg from '@assets/generated_images/Green_t-shirt_product_photo_bda7c61f.png';
 import blueShirtImg from '@assets/generated_images/Blue_t-shirt_product_photo_932763cc.png';
+import charcoalHeavyImg from '@assets/generated_images/charcoal_heavyweight_tee_product.png';
+import oliveHeavyImg from '@assets/generated_images/olive_heavyweight_tee_product.png';
+import brownHeavyImg from '@assets/generated_images/brown_heavyweight_tee_product.png';
 
 export const products: Product[] = [
   {
@@ -90,6 +93,48 @@ export const products: Product[] = [
       { name: "Green", value: "#228B22", image: greenShirtImg },
       { name: "Black", value: "#000000", image: blackShirtImg },
       { name: "Navy", value: "#000080", image: navyShirtImg }
+    ]
+  },
+  {
+    id: "7",
+    name: "Heavyweight Charcoal",
+    price: 39.99,
+    description: "Premium heavyweight cotton at 6.5oz - built to last with superior durability",
+    image: charcoalHeavyImg,
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    gender: "mens",
+    colors: [
+      { name: "Charcoal", value: "#36454F", image: charcoalHeavyImg },
+      { name: "Black", value: "#000000", image: blackShirtImg },
+      { name: "Olive", value: "#6B8E23", image: oliveHeavyImg }
+    ]
+  },
+  {
+    id: "8",
+    name: "Heavyweight Olive",
+    price: 39.99,
+    description: "Rugged 6.5oz heavyweight fabric perfect for year-round wear",
+    image: oliveHeavyImg,
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    gender: "unisex",
+    colors: [
+      { name: "Olive", value: "#6B8E23", image: oliveHeavyImg },
+      { name: "Charcoal", value: "#36454F", image: charcoalHeavyImg },
+      { name: "Brown", value: "#654321", image: brownHeavyImg }
+    ]
+  },
+  {
+    id: "9",
+    name: "Heavyweight Brown",
+    price: 39.99,
+    description: "Ultra-durable heavyweight construction with premium feel and longevity",
+    image: brownHeavyImg,
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    gender: "unisex",
+    colors: [
+      { name: "Brown", value: "#654321", image: brownHeavyImg },
+      { name: "Charcoal", value: "#36454F", image: charcoalHeavyImg },
+      { name: "Olive", value: "#6B8E23", image: oliveHeavyImg }
     ]
   }
 ];

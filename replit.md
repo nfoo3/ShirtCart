@@ -7,6 +7,7 @@ ThreadCraft is a premium custom t-shirt e-commerce web application that provides
 ## Recent Changes
 
 **November 24, 2025**
+- Added 3 new heavyweight t-shirt products (Charcoal, Olive, Brown) at $39.99 with XXL sizing
 - Updated color scheme from burgundy to deep indigo (HSL: 235 70% 35% in light mode, 235 70% 45% in dark mode)
 - Increased MENS/WOMENS navigation labels by 25% (12px → 15px)
 - Increased header icons (Search, User, Cart) by 25% (20px → 25px)
